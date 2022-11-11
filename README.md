@@ -1,6 +1,6 @@
 ## simple_hash_widget
-This widget can be used to generate hashes  using a gui
-The widget is generated using tkinter module of python and gashlub has heen used to generate sha256 hashes.
+This widget can be used to generate hashes  using a gui.
+The widget is generated using tkinter module of python and hashlib has heen used to generate sha256 hashes.
 ## How to use
 Somtimed you forget the password or some data which you want to remember.
 For security reasons you don't eant to write it where anyone can access it.
@@ -19,3 +19,4 @@ Thus you can remember the passphrase and then use it to check dor the correct pa
 - Add the option to store and retrieve passwords 
 - let the user use an external file or keys stored in thumb drive to secure and retrieve passwords
 - Add a counter and log of how many times the program is used 
+- Make it an exe file( Don't know how to do it !!)
