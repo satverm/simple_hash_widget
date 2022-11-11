@@ -88,7 +88,7 @@ e_salt= tk.Entry(root, show='*', width=30)
 e_salt.pack(pady=20)
 btn2 = tk.Button(root, text= 'Click to get hash of hashed input+hashed passphrase ', command= get_salted_hash, bg ='red', fg= 'white', padx=5, pady= 20)
 btn2.pack()
-lbl_salted= tk.Label(root, text=" Salted hash will be diaplayed here", relief="raised", border=7,padx=5,pady=20)
+lbl_salted= tk.Label(root, text=" Salted hash will be displayed here", relief="raised", border=7,padx=5,pady=20)
 lbl_salted.pack()
 
 btn_ext = tk.Button(root, text= 'Exit', fg= 'white',  bg= 'red', command= root.destroy)
