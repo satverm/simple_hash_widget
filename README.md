@@ -14,3 +14,7 @@ If you want enhanced security then you can use the additional passphrase option 
 Thus you can remember the passphrase and then use it to check dor the correct password without the need of using directly in any application where there may be limitations on number of times you can enter the password. 
 ## The option to store and retrieve the password is also possible using a small file or database.
 This is available in the repository https:\\www.github.com\satverm\Password-Manager 
+## TODO:
+- Add the option to store and retrieve passwords 
+- let the user use an external file or keys stored in thumb drive to secure and retrieve passwords
+- Add a counter and log of how many times the program is used 
