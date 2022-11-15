@@ -2,8 +2,9 @@
 This widget can be used to generate hashes  using a gui.
 The widget is generated using tkinter module of python and hashlib has heen used to generate sha256 hashes.
 ## Concept:
-Somtimed you forget the password or some data which you want to remember.
+Somtimes you forget the password or some data which you want to remember.
 For security reasons you don't eant to write it where anyone can access it.
+One of the option is to write the first few hash digits of the input.
 ## How to use:
  - Download the python file using curl https:\\www.github.com\satverm\simple_hash_widget in linux os.
  - Use git clone or wget, you can google to downlod files from github.
