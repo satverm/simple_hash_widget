@@ -6,6 +6,7 @@ If youbwant to use any other hash like sha512, the get hash function can be modi
  - tk_hash_pers_widget.py is a version where you can add your sequence in the code itself and have a unique file to generate a unique hash. 
 Since the sequence is part of the code and not seen in the widget window, it can be considered as a hard coded code which can be accessed only by having the access to the file.
 Though comments have been added to create your own coded sequence, but some working knowledge of python will be useful. 
+
 ## Concept:
 Sometimes you forget the password or some data which you want to remember.
 For security reasons you don't want to store or write it where anyone can access it.
