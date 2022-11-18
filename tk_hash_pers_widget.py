@@ -75,7 +75,7 @@ def get_pers_hash():
 
 
 
-# hash(pass_hash +  ip_char + sequence + pass_hash)
+# hash(pass_hash + sequence + pass_hash)
 
 ## define a sequence ##
 #Create your own sequence which is put between the inp_hash and the pp_hash. This can be part of your modified code or it can be created as an entry box to get the sequence from the user.
