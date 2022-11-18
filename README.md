@@ -1,6 +1,11 @@
 ## simple_hash_widget
 This widget can be used to generate hashes  using a gui.
 The widget is generated using tkinter module of python and hashlib has heen used to generate sha256 hashes.
+If youbwant to use any other hash like sha512, the get hash function can be modified.
+## Updates:
+ - tk_hash_pers_widget.py is a version where you can add your sequence in the code itself and have a unique file to generate a unique hash. 
+Since the sequence is part of the code and not seen in the widget window, it can be considered as a hard coded code which can be accessed only by having the access to the file.
+Though comments have been added to create your own coded sequence, but some working knowledge of python will be useful. 
 
 ## Concept:
 Sometimes you forget the password or some data which you want to remember.
