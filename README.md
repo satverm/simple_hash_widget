@@ -1,7 +1,7 @@
 ## simple_hash_widget
 This widget can be used to generate hashes  using a gui.
 The widget is generated using tkinter module of python and hashlib has heen used to generate sha256 hashes.
-If youbwant to use any other hash like sha512, the get hash function can be modified.
+If youbwant to use any other hash like sha512, the get hash function can be accessed at https://www.github.com/satverm/simple_hash_widget/tk_hash_pers_widget.py
 ## Concept:
 Sometimes you forget the password or some data which you want to remember.
 For security reasons you don't want to store or write it where anyone can access it.
