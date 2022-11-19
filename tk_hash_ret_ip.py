@@ -137,34 +137,26 @@ def get_back_inp(pw_list=[], passphrase= None):
 	
 	inp_lst = pw_list
 	pp = passphrase
-	c_ser = 0 # we can choose this intiger as any high value to make it a unique personal code
-	#inp_char_lst_hsh = []
-	#inp_char_lst = [x for x in inp]
+	c_ser = 0 # should be same as used in the code to encode input to hash
+	inp_word = ''
 	for ip_ch_hsh in inp_lst:
 		c_ser += 1
-		#tmp_ch_str = pp + char + str(c_ser) + get_sha256(pp)
-		
-		#hsh_len = 1
-		#sml_hsh_len = 1
+		tmp_inp = ''
 		for i in range(32, 144):
 			test_chr_str = pp + str(chr(i)) + str(c_ser) + get_sha256(pp)
 			test_chr_str_hsh = get_sha256(test_chr_str)
-			if test_chr_str_hsh != tmp_ch_str_hsh:
+			if test_chr_str_hsh[1:len(ip_ch_hsh)] == ip_ch_hsh[1:-1]:
+				tmp_inp = str(chr(i))
+				break
+			else:
+				print("continue checking other characters")
+		if tmp_inp == '':
+			return("incorrect hash input or passphrase")
+		else:
+			inp_word += tmp_inp
+	return(inp_word)
 				
-				for j in range(hsh_len,64):
-					if test_chr_str_hsh[1:j] == tmp_ch_str_hsh[1:j]:
-						tmp_hsh_len = j
-						if sml_hsh_len < tmp_hsh_len:
-							sml_hsh_len = tmp_hsh_len
-							
-					else:
-						hsh_len = sml_hsh_len
-						break
-						
-		sml_inp_chr_hsh = tmp_ch_str_hsh[0:sml_hsh_len+1]
-		inp_char_lst_hsh.append(sml_inp_chr_hsh)
-		
-	return(inp_char_lst_hsh)
+
 		
 
 #command for small hash button
