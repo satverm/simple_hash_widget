@@ -19,11 +19,11 @@ import tkinter as tk
 import hashlib as hs
 root = tk.Tk()
 root.title("SHA256 Personal Hash Generator")
-root.geometry('1280x2200')
+#root.geometry('1280x2200')
 
 #a frame to keep input data
 frm1 = tk.Frame(root, border=5)
-frm1.pack(padx=5, pady=10)
+frm1.pack(padx=5, pady=5)
 
 # reusable hash function
 def get_sha256(input_str= None):
@@ -104,59 +104,59 @@ def reset_all():
 	
 
 # widget window design
-label1 = tk.Label(frm1, text="Personal Hash Generator".upper(), padx=20, pady=40, fg='purple')
+label1 = tk.Label(frm1, text="Personal Hash Generator".upper(), padx=5, pady=5, fg='purple')
 label1.pack()
 
 label2=tk.Label(frm1, text="Enter the input to get hash")
 label2.pack()
 
-e_input= tk.Entry(frm1,  show= '*', width= 30)
-e_input.pack(pady=(10,40))
+e_input= tk.Entry(frm1,  show= '*', width= 50)
+e_input.pack(pady=(5,5))
 
 label3 = tk.Label(frm1, text="Enter the input again to confirm:")
 label3.pack()
 
-e_input_cnf= tk.Entry(frm1, show= '*', width =30)
-e_input_cnf.pack(pady=(10, 20))
+e_input_cnf= tk.Entry(frm1, show= '*', width =50)
+e_input_cnf.pack(pady=(5, 5))
 
 lbl_match = tk.Label(frm1, text=" Testing inputs..", bg= 'grey', fg='yellow')
 #lbl_match.pack(padx=5,pady=10)
 
-btn_input_hsh= tk.Button(frm1, text="Click to get  hash of input", padx=10, pady=20,command= get_input_hash, relief= "raised", bg= 'grey', fg= 'white', border=10, width=30)
-btn_input_hsh.pack(pady=20)
+btn_input_hsh= tk.Button(frm1, text="Click to get  hash of input", padx=5, command= get_input_hash, relief= "raised", bg= 'grey', fg= 'white', border=5, width=30)
+btn_input_hsh.pack(pady=5)
 
-label_ip_hash = tk.Label(frm1, text= "Input hash will be displayed here", wraplength=800, padx= 5, pady=10, relief='sunken', width=32, height=2, fg='blue', border=5)
-label_ip_hash.pack(pady=40)
+label_ip_hash = tk.Label(frm1, text= "Input hash will be displayed here", wraplength=800, padx= 5, pady=5, relief='sunken', width=60, height=2, fg='blue', border=5)
+label_ip_hash.pack(pady=5)
 
-label4= tk.Label(root, text="Add a passphrase or pin (salt) for more security", pady=20)
+label4= tk.Label(root, text="Add a passphrase or pin (salt) for more security", pady=5)
 label4.pack()
 
 e_pass_phrase= tk.Entry(root, show='*', width=30)
-e_pass_phrase.pack(pady=30)
+e_pass_phrase.pack(pady=5)
 
 #add a button for passphrase hash
 #and passphrase hash label
 
-btn_hash_pp= tk.Button(root, text= 'Click to get hash of  passphrase ', command= get_pp_hash, bg ='grey', fg= 'white', relief= "raised", padx=5, pady= 20, border=10, width=30)
-btn_hash_pp.pack(pady=(10,20))
+btn_hash_pp= tk.Button(root, text= 'Click to get hash of  passphrase ', command= get_pp_hash, bg ='grey', fg= 'white', relief= "raised", padx=5, border=5, width=30)
+btn_hash_pp.pack(pady=(5,5))
 
-lbl_pp_hsh =tk.Label(root, text="Passphrase hash will be diaplayed here", fg="blue", relief="sunken", border=7,padx=5,pady=10, wraplength=800, height =2, width=32)
+lbl_pp_hsh =tk.Label(root, text="Passphrase hash will be diaplayed here", fg="blue", relief="sunken", border=5,padx=5,pady=5, wraplength=200, height =2, width=60)
 lbl_pp_hsh.pack()
 
 
-btn_hash_ip_pers_pp= tk.Button(root, text= 'Click to get Personal hash', command= get_pers_hash, bg ='black', fg= 'white', relief= "raised", padx=5, pady= 20, border=10)
-btn_hash_ip_pers_pp.pack(pady=(10,20))
+btn_hash_ip_pers_pp= tk.Button(root, text= 'Click to get Personal hash', command= get_pers_hash, bg ='black', fg= 'white', relief= "raised", padx=5, pady= 5, border=5)
+btn_hash_ip_pers_pp.pack(pady=(5,5))
 
-lbl_salted= tk.Label(root, text="Personal hash will be diaplayed here", fg="blue", relief="sunken", border=7,padx=5,pady=10, wraplength=800, height =2, width=32)
+lbl_salted= tk.Label(root, text="Personal hash will be diaplayed here", fg="blue", relief="sunken", border=5,padx=5,pady=5, wraplength=800, height =2, width=60)
 lbl_salted.pack()
 
 
-btn_reset = tk.Button(root, text= 'Reset', fg= 'white',  bg= 'blue', relief="raised", command= reset_all, border=10)
-btn_reset.pack(padx =5, pady=(30,10))
+btn_reset = tk.Button(root, text= 'Reset', fg= 'white',  bg= 'blue', relief="raised", command= reset_all, border=5, width=20)
+btn_reset.pack(padx =15, pady=(5,5))
 
 
-btn_exit = tk.Button(root, text= 'Exit', fg= 'white',  bg= 'blue', relief="raised", command= root.destroy, border=10)
-btn_exit.pack(padx =5, pady=(30,10))
+btn_exit = tk.Button(root, text= 'Exit', fg= 'white',  bg= 'blue', relief="raised", command= root.destroy, width= 20, border=5)
+btn_exit.pack(padx =15, pady=(5,5))
 
 
 root.mainloop()
