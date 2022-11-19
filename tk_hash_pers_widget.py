@@ -73,23 +73,16 @@ def get_pers_hash():
 		hsh_pers_salted_ip = get_sha256(pers_salted_ip)
 		lbl_salted.configure(text= hsh_pers_salted_ip)
 
-
-
 # hash(pass_hash + sequence + pass_hash)
 
 ## define a sequence ##
 #Create your own sequence which is put between the inp_hash and the pp_hash. This can be part of your modified code or it can be created as an entry box to get the sequence from the user.
 def create_sequence():
-	
 	seq= 'anything you want of any length but it should be a string'     #you can change the value of seq but it should be string
 	return(seq)
-		
-def get_char_hash():
-	
-	pass
+
 
 def get_smallest_hash(pass_phrase= None, input_data= None, pack_sequence= None, external_key= None):
-	
 	pass
 
 # Reset all the boxes
