@@ -1,5 +1,6 @@
 '''
 Update:
+This is an updated widget where the user can retrieve teh input from the stored hashes of the input
 [This is a modified simple tkinter widget for use as a personal file where you can modify the code to generate hash based on your sequence entered in the code itself.
 To be precise, you can use your own value of the variable seq which is part of the create_sequence() function. This will generate a hash of the input joined with the sequence and the passphrase]
 
