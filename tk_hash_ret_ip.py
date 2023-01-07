@@ -19,6 +19,8 @@ get_smallest_hash function used to store the characters of your password using t
 import tkinter as tk
 import hashlib as hs
 import random as rd
+import os
+
 root = tk.Tk()
 root.title("SHA256 Personal Hash Generator")
 #oot.geometry('1280x2400')
