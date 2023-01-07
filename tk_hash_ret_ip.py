@@ -202,13 +202,13 @@ e_input_cnf.pack(pady= 10)
 lbl_match = tk.Label(frm1, text=" Testing inputs..", bg= 'grey', fg='yellow')
 #lbl_match.pack(padx=5,pady=10)
 
-btn_input_hsh= tk.Button(frm1, text="Click to get  hash of input", padx=10, pady=0,command= get_input_hash, relief= "raised", bg= 'grey', fg= 'white', border=10, width=30)
+btn_input_hsh= tk.Button(frm1, text="Click to get  hash of input", padx=5, pady=0,command= get_input_hash, relief= "raised", bg= 'grey', fg= 'white', border=2, width=20)
 btn_input_hsh.pack(pady=10)
 
-label_ip_hash = tk.Label(frm1, text= "Input hash will be displayed here", wraplength=800, padx= 5, pady=10, relief='sunken', width=32, height=2, fg='blue', border=5)
+label_ip_hash = tk.Label(frm1, text= "Input hash will be displayed here", wraplength=198, padx= 5, pady=0, relief='sunken', width=32, height=2, fg='blue', border=5)
 label_ip_hash.pack(pady=0)
 
-label4= tk.Label(root, text="Add a passphrase or pin (salt) for more security", pady=10)
+label4= tk.Label(root, text="Add a passphrase or pin (salt) for more security", pady=0)
 label4.pack()
 
 e_pass_phrase= tk.Entry(root, show='*', width=30)
@@ -217,17 +217,17 @@ e_pass_phrase.pack(pady=10)
 #add a button for passphrase hash
 #and passphrase hash label
 
-btn_hash_pp= tk.Button(root, text= 'Click to get hash of  passphrase ', command= get_pp_hash, bg ='grey', fg= 'white', relief= "raised", padx=5, pady= 10, border=10, width=30)
-btn_hash_pp.pack(pady=0)
+btn_hash_pp= tk.Button(root, text= 'Click to get hash of  passphrase ', command= get_pp_hash, bg ='grey', fg= 'white', relief= "raised", padx=5, pady= 0, border=3, width=30)
+btn_hash_pp.pack(pady=4)
 
-lbl_pp_hsh =tk.Label(root, text="Passphrase hash will be diaplayed here", fg="blue", relief="sunken", border=7,padx=5,pady=10, wraplength=800, height =2, width=32)
+lbl_pp_hsh =tk.Label(root, text="Passphrase hash will be diaplayed here", fg="blue", relief="sunken", border=7,padx=5,pady=0, wraplength=198, height =2, width=32)
 lbl_pp_hsh.pack()
 
 
-btn_hash_ip_pers_pp= tk.Button(root, text= 'Click to get Personal hash', command= get_pers_hash, bg ='black', fg= 'white', relief= "raised", padx=5, pady= 10, border=10)
-btn_hash_ip_pers_pp.pack(pady=0)
+btn_hash_ip_pers_pp= tk.Button(root, text= 'Click to get Personal hash', command= get_pers_hash, bg ='grey', fg= 'white', relief= "raised", padx=5, pady= 0, border=4)
+btn_hash_ip_pers_pp.pack(pady=5)
 
-lbl_salted= tk.Label(root, text="Personal hash will be diaplayed here", fg="blue", relief="sunken", border=7,padx=5,pady=10, wraplength=800, height =2, width=32)
+lbl_salted= tk.Label(root, text="Personal hash will be diaplayed here", fg="blue", relief="sunken", border=7,padx=5,pady=0, wraplength=198, height =2, width=32)
 lbl_salted.pack(pady=0)
 
 
