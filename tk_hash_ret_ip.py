@@ -23,7 +23,12 @@ root = tk.Tk()
 root.title("SHA256 Personal Hash Generator")
 #oot.geometry('1280x2400')
 
-def get_ip_back():
+#todo: add a window to select the file to store the data and aslo to retrive if required
+# we can use any text file but using a database file is more useful as we can do add, apend, edit and delete operations on the database.
+# Also we can have multiple columns to add fields like id, userid, remark, user, the hashlist itself etc
+# For this we need to create a main window to select options such as create database file, select database file, retrieve input or store new input and then use the different windows for each of these options. 
+
+def get_ip_back(): #under development
 	ret_win = tk.Tk()
 	lbl_ret_pw = tk.Label(ret_win, text = 'Retrieve input')
 	lbl_ret_pw.pack()
