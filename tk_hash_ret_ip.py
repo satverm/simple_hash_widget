@@ -237,12 +237,12 @@ btn_sml_hsh_lst.pack(padx =5, pady=10)
 lbl_sml_hsh_lst = tk.Label(root, text= "Smallest hash list", fg= 'blue', relief= 'sunken', border= 7, padx=5, pady =10,wraplength= 1000, height=3, width=50)
 lbl_sml_hsh_lst.pack(pady=0)
 
-btn_reset = tk.Button(root, text= 'Reset', fg= 'white',  bg= 'blue', relief="raised", command= reset_all, border=10)
-btn_reset.pack(padx =5, pady=10)
+btn_reset = tk.Button(root, text= 'Reset', fg= 'red',  bg= 'yellow', relief="raised", command= reset_all, padx= 10, border=2)
+btn_reset.pack(padx =15, pady=10)
 
 
-btn_exit = tk.Button(root, text= 'Exit', fg= 'white',  bg= 'blue', relief="raised", command= root.destroy, border=10)
-btn_exit.pack(padx =5, pady=(10,10))
+btn_exit = tk.Button(root, text= 'Exit', fg= 'white',  bg= 'red', relief="raised", padx= 10, command= root.destroy, border=2)
+btn_exit.pack(padx =15, pady=(10,10))
 
 
 root.mainloop()
