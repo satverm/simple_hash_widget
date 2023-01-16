@@ -19,28 +19,24 @@ get_smallest_hash function used to store the characters of your password using t
 import tkinter as tk
 import hashlib as hs
 import random as rd
+from tkinter import filedialog
+from tkinter import messagebox
 import os
 
 root = tk.Tk()
 root.title("SHA256 Personal Hash Generator")
-#oot.geometry('1280x2400')
+root.withdraw()
+messagebox.askokcancel("Personal Hash Generator","The program Generates hashes for any input\nSelect Ok to cintinue and select a file")
+my_dbfile= filedialog.askopenfile()
+
+root.deiconify()
+#root.geometry('1280x2400')
 
 #todo: add a window to select the file to store the data and aslo to retrive if required
 # we can use any text file but using a database file is more useful as we can do add, apend, edit and delete operations on the database.
 # Also we can have multiple columns to add fields like id, userid, remark, user, the hashlist itself etc
 # For this we need to create a main window to select options such as create database file, select database file, retrieve input or store new input and then use the different windows for each of these options. 
 
-def get_ip_back(): #under development
-	ret_win = tk.Tk()
-	lbl_ret_pw = tk.Label(ret_win, text = 'Retrieve input')
-	lbl_ret_pw.pack()
-	e_ret_ip = tk.Entry(ret_win)
-	e_ret_ip.pack()
-	e_pp = tk.Entry(ret_win)
-	e_pp.pack()
-	
-	
-	ret_win.mainloop()
 	
 #a frame to keep input data
 frm1 = tk.Frame(root, border=5)
