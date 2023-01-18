@@ -32,7 +32,7 @@ the widgets as per requirement from the ui file
         - Making the modules for standard functions: This will include all standard functions and without the need for any user input. Like hash(input), read_yn() etc.
         - every window should be an independent window with it's widgets in teh window design as a group and the related functions immediately above the widgets design. This way everty window can be made modular and can be used at more than one place or can be copied and modified for similar requirements.
         - For a fully gui based application, there should not be any input from the user in the terminal like app and thinking that the terminal is not available.
-        
+        - The widget names should be as per teh task which they are doing
 
 Title
 '''
