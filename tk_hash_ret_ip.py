@@ -25,11 +25,11 @@ import os
 
 root = tk.Tk()
 root.title("SHA256 Personal Hash Generator")
-root.withdraw()
-messagebox.askokcancel("Personal Hash Generator","The program Generates hashes for any input\nSelect Ok to cintinue and select a file")
-my_dbfile= filedialog.askopenfile()
+#root.withdraw()
+#messagebox.askokcancel("Personal Hash Generator","The program Generates hashes for any input\nSelect Ok to cintinue and select a file")
+#my_dbfile= filedialog.askopenfile()
 
-root.deiconify()
+#root.deiconify()
 #root.geometry('1280x2400')
 
 #todo: add a window to select the file to store the data and aslo to retrive if required
