@@ -11,15 +11,11 @@ import os
 ## Standard Fuctions  ##
 
 # get teh sha256 hash of any input string
-
-
 def get_sha256(input_str):
     hash_op = hs.sha256(input_str.encode('utf-8')).hexdigest()
     return(hash_op)
 
 # This function is used to create a personal sequence in the code itself to make the hash unique for the user
-
-
 def create_pers_sequence():
     # you can change the value of seq but it should be string
     seq = 'anything you want of any length but it should be a string'
@@ -27,8 +23,6 @@ def create_pers_sequence():
 
 # A function to return smallest hash digits for storing the input characteres and reteieving later when needed
 # This function will be converted to a standard function without the need to  get input from a widget
-
-
 def inp_char_pp_hash_lst(inp, pp, c_ser):
     inp_char_lst_hsh = []
     inp_char_lst = [x for x in inp]
@@ -54,6 +48,33 @@ def inp_char_pp_hash_lst(inp, pp, c_ser):
         inp_char_lst_hsh.append(sml_inp_chr_hsh)
     return(inp_char_lst_hsh)
 
+# Fuction to get back the input string back from the input hash list
+def get_back_inp(c_ser, inp_list, pp):
+    inp_list = []
+    c_ser = 0  # should be same as used in the code to encode input to hash
+    inp_word = ''
+    for ip_ch_hsh in inp_list:
+        c_ser += 1
+        tmp_inp = ''
+        for i in range(32, 144):
+            test_chr_str = pp + str(chr(i)) + str(c_ser) + get_sha256(pp)
+            test_chr_str_hsh = get_sha256(test_chr_str)
+            if test_chr_str_hsh[1:len(ip_ch_hsh)] == ip_ch_hsh[1:-1]:
+                tmp_inp = str(chr(i))
+                break
+            else:
+                continue
+        if tmp_inp == '':
+            return("incorrect hash input or passphrase")
+        else:
+            inp_word += tmp_inp
+    return(inp_word)
+
+
+## main window widget design ##
+# all functons related to this window should be here only
+root = tk.Tk()
+root.title("SHA256 Personal Hash Generator")
 
 # This function runs when btn1 is pressed to checkk if inputs are same and generate thw hash of the input or show caution if inputs don't match
 def get_input_hash():
@@ -71,16 +92,12 @@ def get_input_hash():
         e_input_cnf.delete(0, tk.END)
 
 # Hash of passphrase
-
-
 def get_pp_hash():
     pass_phrase = e_pass_phrase.get()
     pp_hash = get_sha256(pass_phrase)
     lbl_pp_hsh.configure(text=pp_hash)
 
 # Hash ( hash(input)+ hash(passphrase) )
-
-
 def get_salted_hash():
     ip_text_hsh = get_sha256(e_input.get())
     salt_hsh = get_sha256(e_pass_phrase.get())
@@ -88,65 +105,26 @@ def get_salted_hash():
     hsh_salted_ip = get_sha256(salted_ip)
     lbl_salted.configure(text=hsh_salted_ip)
 
-
 # Get Personal hash
 # hash( hash(input)+ yoursequence + hash(passphrase))
 def get_pers_hash():
     ip_text_hsh = get_sha256(e_input.get())
     salt_hsh = get_sha256(e_pass_phrase.get())
-    pers_salted_ip = ip_text_hsh + create_sequence() + salt_hsh
+    pers_salted_ip = ip_text_hsh + create_pers_sequence() + salt_hsh
     hsh_pers_salted_ip = get_sha256(pers_salted_ip)
     lbl_salted.configure(text=hsh_pers_salted_ip)
 
 
-# hash(pass_hash +  ip_char + sequence + pass_hash)
-
-## define a sequence ##
-# Create your own sequence which is put between the inp_hash and the pp_hash. This can be part of your modified code or it can be created as an entry box to get the sequence from the user. To get back the input using the passphrase we can store all tge characters of the input by securing it with a sequence and a passphrase. Then the same passphrase is used to get back the characters.
-
-
-# Function to getback input from earlier stored small hashes
-
-
-def get_back_inp(pw_list=[], passphrase=None):
-
-    inp_lst = pw_list
-    pp = passphrase
-    c_ser = 0  # should be same as used in the code to encode input to hash
-    inp_word = ''
-    for ip_ch_hsh in inp_lst:
-        c_ser += 1
-        tmp_inp = ''
-        for i in range(32, 144):
-            test_chr_str = pp + str(chr(i)) + str(c_ser) + get_sha256(pp)
-            test_chr_str_hsh = get_sha256(test_chr_str)
-            if test_chr_str_hsh[1:len(ip_ch_hsh)] == ip_ch_hsh[1:-1]:
-                tmp_inp = str(chr(i))
-                break
-            else:
-                print("continue checking other characters")
-        if tmp_inp == '':
-            return("incorrect hash input or passphrase")
-        else:
-            inp_word += tmp_inp
-    return(inp_word)
-
-
 # command for small hash button
 def get_sml_hsh_lst():
-
-    lbl_sml_hsh_lst.configure(text=inp_char_pp_hash_lst())
-
-
-def get_smallest_hash(inp_chr_hsh=None):
-
-    inp_chr_lst = inp_char_pp_hash_lst()
-
-    pass
+    pp = e_pass_phrase.get()
+    inp = e_input.get()
+    c_ser = 0
+    inp_char_pp_hash_lst_str = inp_char_pp_hash_lst(inp,pp,c_ser)
+    # code required for all arguments to be passed to following function
+    lbl_sml_hsh_lst.configure(text= inp_char_pp_hash_lst_str)
 
 # Reset all the boxes
-
-
 def reset_all():
     e_input.delete(0, tk.END)
     e_input_cnf.delete(0, tk.END)
@@ -158,9 +136,6 @@ def reset_all():
     lbl_sml_hsh_lst.configure(text='Smallest hash list')
 
 
-# main widget window design
-root = tk.Tk()
-root.title("SHA256 Personal Hash Generator")
 label1 = tk.Label(root, text="Personal Hash Generator".upper(),
                   padx=10, pady=5, fg='purple')
 label1.pack()
