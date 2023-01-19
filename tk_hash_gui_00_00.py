@@ -70,7 +70,6 @@ def get_back_inp(c_ser, inp_list, pp):
             inp_word += tmp_inp
     return(inp_word)
 
-
 ## main window widget design ##
 # all functons related to this window should be here only
 root = tk.Tk()
@@ -136,18 +135,18 @@ def reset_all():
     lbl_sml_hsh_lst.configure(text='Smallest hash list')
 
 
-label1 = tk.Label(root, text="Personal Hash Generator".upper(),
+title_label = tk.Label(root, text="Personal Hash Generator".upper(),
                   padx=10, pady=5, fg='purple')
-label1.pack()
+title_label.pack()
 
-label2 = tk.Label(root, text="Enter the input to get hash")
-label2.pack()
+inp_label = tk.Label(root, text="Enter the input to get hash")
+inp_label.pack()
 
 e_input = tk.Entry(root,  show='*', width=30)
 e_input.pack(pady=5)
 
-label3 = tk.Label(root, text="Enter the input again to confirm:")
-label3.pack()
+inp_conf_label = tk.Label(root, text="Enter the input again to confirm:")
+inp_conf_label.pack()
 
 e_input_cnf = tk.Entry(root, show='*', width=30)
 e_input_cnf.pack(pady=10)
@@ -163,15 +162,12 @@ label_ip_hash = tk.Label(root, text="Input hash will be displayed here", wraplen
                          padx=5, pady=0, relief='sunken', width=32, height=2, fg='blue', border=5)
 label_ip_hash.pack(pady=0)
 
-label4 = tk.Label(
+pass_phr_label = tk.Label(
     root, text="Add a passphrase or pin (salt) for more security", pady=0)
-label4.pack()
+pass_phr_label.pack()
 
 e_pass_phrase = tk.Entry(root, show='*', width=30)
 e_pass_phrase.pack(pady=10)
-
-# add a button for passphrase hash
-# and passphrase hash label
 
 btn_hash_pp = tk.Button(root, text='Click to get hash of  passphrase ', command=get_pp_hash,
                         bg='grey', fg='white', relief="raised", padx=5, pady=0, border=3, width=30)
@@ -189,7 +185,6 @@ btn_hash_ip_pers_pp.pack(pady=5)
 lbl_salted = tk.Label(root, text="Personal hash will be diaplayed here", fg="blue",
                       relief="sunken", border=7, padx=5, pady=0, wraplength=198, height=2, width=32)
 lbl_salted.pack(pady=0)
-
 
 btn_sml_hsh_lst = tk.Button(root, text='Get smallest hash list', fg='white',
                             bg='blue', relief="raised", command=get_sml_hsh_lst, border=10)
