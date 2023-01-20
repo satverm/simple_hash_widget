@@ -138,70 +138,50 @@ def reset_all():
 title_label = tk.Label(root, text="Personal Hash Generator".upper(),
                   padx=10, pady=5, fg='purple')
 title_label.pack()
-
 inp_label = tk.Label(root, text="Enter the input to get hash")
 inp_label.pack()
-
 e_input = tk.Entry(root,  show='*', width=30)
 e_input.pack(pady=5)
-
 inp_conf_label = tk.Label(root, text="Enter the input again to confirm:")
 inp_conf_label.pack()
-
 e_input_cnf = tk.Entry(root, show='*', width=30)
 e_input_cnf.pack(pady=10)
-
 lbl_match = tk.Label(root, text=" Testing inputs..", bg='grey', fg='yellow')
 # lbl_match.pack(padx=5,pady=10)
-
 btn_input_hsh = tk.Button(root, text="Click to get  hash of input", padx=5, pady=0,
                           command=get_input_hash, relief="raised", bg='grey', fg='white', border=2, width=20)
 btn_input_hsh.pack(pady=10)
-
 label_ip_hash = tk.Label(root, text="Input hash will be displayed here", wraplength=198,
                          padx=5, pady=0, relief='sunken', width=32, height=2, fg='blue', border=5)
 label_ip_hash.pack(pady=0)
-
 pass_phr_label = tk.Label(
     root, text="Add a passphrase or pin (salt) for more security", pady=0)
 pass_phr_label.pack()
-
 e_pass_phrase = tk.Entry(root, show='*', width=30)
 e_pass_phrase.pack(pady=10)
-
 btn_hash_pp = tk.Button(root, text='Click to get hash of  passphrase ', command=get_pp_hash,
                         bg='grey', fg='white', relief="raised", padx=5, pady=0, border=3, width=30)
 btn_hash_pp.pack(pady=4)
-
 lbl_pp_hsh = tk.Label(root, text="Passphrase hash will be diaplayed here", fg="blue",
                       relief="sunken", border=7, padx=5, pady=0, wraplength=198, height=2, width=32)
 lbl_pp_hsh.pack()
-
-
 btn_hash_ip_pers_pp = tk.Button(root, text='Click to get Personal hash', command=get_pers_hash,
                                 bg='grey', fg='white', relief="raised", padx=5, pady=0, border=4)
 btn_hash_ip_pers_pp.pack(pady=5)
-
 lbl_salted = tk.Label(root, text="Personal hash will be diaplayed here", fg="blue",
                       relief="sunken", border=7, padx=5, pady=0, wraplength=198, height=2, width=32)
 lbl_salted.pack(pady=0)
-
 btn_sml_hsh_lst = tk.Button(root, text='Get smallest hash list', fg='white',
                             bg='blue', relief="raised", command=get_sml_hsh_lst, border=10)
 btn_sml_hsh_lst.pack(padx=5, pady=10)
-
 lbl_sml_hsh_lst = tk.Label(root, text="Smallest hash list", fg='blue', relief='sunken',
                            border=7, padx=5, pady=10, wraplength=1000, height=3, width=50)
 lbl_sml_hsh_lst.pack(pady=0)
-
 btn_reset = tk.Button(root, text='Reset', fg='red',  bg='yellow',
                       relief="raised", command=reset_all, padx=10, border=2)
 btn_reset.pack(padx=15, pady=10)
-
-
 btn_exit = tk.Button(root, text='Exit', fg='white',  bg='red',
                      relief="raised", padx=10, command=root.destroy, border=2)
 btn_exit.pack(padx=15, pady=(10, 10))
-
 
 root.mainloop()
