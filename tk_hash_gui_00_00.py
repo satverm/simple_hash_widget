@@ -154,8 +154,8 @@ def open_hash_win():
     btn_input_hsh = tk.Button(get_hash_win, text="Click to get  hash of input", padx=5, pady=0,
                             command=get_input_hash, relief="raised", bg='grey', fg='white', border=2, width=20)
     btn_input_hsh.pack(pady=10)
-    label_ip_hash = tk.Label(get_hash_win, text="Input hash will be displayed here", wraplength=198,
-                            padx=5, pady=0, relief='sunken', width=32, height=2, fg='blue', border=5)
+    label_ip_hash = tk.Label(get_hash_win, text="Input hash will be displayed here", wraplength=240,
+                            padx=5, pady=0, relief='sunken', width=35, height=2, fg='blue', border=5)
     label_ip_hash.pack(pady=0)
     pass_phr_label = tk.Label(
         get_hash_win, text="Add a passphrase or pin (salt) for more security", pady=0)
