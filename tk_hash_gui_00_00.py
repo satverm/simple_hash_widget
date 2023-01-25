@@ -166,19 +166,19 @@ def open_hash_win():
                             bg='grey', fg='white', relief="raised", padx=5, pady=0, border=3, width=30)
     btn_hash_pp.pack(pady=4)
     lbl_pp_hsh = tk.Label(get_hash_win, text="Passphrase hash will be diaplayed here", fg="blue",
-                        relief="sunken", border=7, padx=5, pady=0, wraplength=198, height=2, width=32)
+                        relief="sunken", border=4, padx=5, pady=0, wraplength=240, height=2, width=35)
     lbl_pp_hsh.pack()
     btn_hash_ip_pers_pp = tk.Button(get_hash_win, text='Click to get Personal hash', command=get_pers_hash,
                                     bg='grey', fg='white', relief="raised", padx=5, pady=0, border=4)
     btn_hash_ip_pers_pp.pack(pady=5)
     lbl_salted = tk.Label(get_hash_win, text="Personal hash will be diaplayed here", fg="blue",
-                        relief="sunken", border=7, padx=5, pady=0, wraplength=198, height=2, width=32)
-    lbl_salted.pack(pady=0)
+                        relief="sunken", border=4, padx=5, pady=0, wraplength=240, height=2, width=35)
+    lbl_salted.pack()
     btn_sml_hsh_lst = tk.Button(get_hash_win, text='Get smallest hash list', fg='white',
                                 bg='blue', relief="raised", command=get_sml_hsh_lst, border=10)
     btn_sml_hsh_lst.pack(padx=5, pady=10)
     lbl_sml_hsh_lst = tk.Label(get_hash_win, text="Smallest hash list", fg='blue', relief='sunken',
-                            border=7, padx=5, pady=10, wraplength=1000, height=3, width=50)
+                            border=4, padx=5, pady=5, wraplength=300, height=3, width=40)
     lbl_sml_hsh_lst.pack(pady=0)
     btn_reset = tk.Button(get_hash_win, text='Reset', fg='red',  bg='yellow',
                         relief="raised", command=reset_all, padx=10, border=2)
@@ -191,10 +191,16 @@ def open_hash_win():
 
 
 ## main window widget(UI) design ##
+# here we can call any window as per requirement of the workflow
+def exit_main():
+    # do something
+    root.destroy()
 root = tk.Tk()
 root.title("Hash Generator")
 root.geometry('800x600')
 hash_input_btn = tk.Button(root, text= "Get Input Hash List", command= open_hash_win)
 hash_input_btn.pack(padx= 10, pady= 20)
+btn_main_win_exit = tk.Button(root, text= 'Exit Program', command= exit_main, padx=5, pady=(5))
+btn_main_win_exit.pack(side= 'bottom', pady= 10)
 
 root.mainloop()
